@@ -1,3 +1,9 @@
+:root {
+    --plusSignWidth: 3px;
+    --plusSignHeight: 40%;
+    --plusSignColor: #fff;
+}
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -146,4 +152,137 @@ li p {
     clear: both;
     transition: opacity 0.2s ease-in-out;
     background-color: rgba(232, 232, 232, 0.5);
+}
+
+/* top panel */
+
+.liScreen {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 25rem);
+    height: 100%;
+    background-color: #eaeaea;
+    display: none;
+}
+
+.radioClass:checked ~ .homeScreen {
+    display: block;
+}
+
+.liScreenContainer {
+    width: 100%;
+    height: 100%;
+    padding: 5rem;
+    position: relative;
+}
+
+.box-shadow {
+    position: fixed;
+    top: -15rem;
+    left: 0;
+    width: 25rem;
+    height: 150vh;
+    background-color: transparent;
+    box-shadow: 1.5rem 0 2rem 0 rgba(0, 0, 0, 0.1);
+}
+
+/* top text */
+
+.upperText {
+    position: absolute;
+    bottom: 85vh;
+}
+
+.h1 {
+    font-weight: 300;
+    font-size: 2.6vh;
+    color: #aaa;
+}
+
+.h2 {
+    letter-spacing: -2px;
+    font-weight: 600;
+    font-size: 4vh;
+    color: #222;
+    transform-origin: left;
+    transform: scaleX(0.95) translateY(-1.5vh);
+}
+
+/* plus sign */
+
+.plusSign {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    background-color: tomato;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    z-index: 11;
+}
+
+.verLine, .horLine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--plusSignWidth);
+    transform-origin: center;
+    transition: all 0.2s;
+    background-color: var(--plusSignColor);
+}
+
+.verLine {
+    width: var(--plusSignWidth);
+    height: var(--plusSignHeight);
+}
+
+.horLine {
+    width: var(--plusSignHeight);
+    height: var(--plusSignWidth);
+}
+
+.plusSignInput {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    height: 6rem;
+    width: 6rem;
+    cursor: pointer;
+    z-index: 20;
+    filter: opacity(0);
+}
+
+.adder {
+    position: absolute;
+    top: calc(5rem + 6rem);
+    right: 5rem;
+    background-color: tomato;
+    z-index: 10;
+    text-align: center;
+    border-radius: 1.5rem 0 1.5rem 1.5rem;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.4);
+    max-height: 0;
+}
+
+.adder ul li {
+    display: block;
+    opacity: 0;
+    font-size: 1.6rem;
+    padding: 2rem 2.5rem;
+    color: #fff;
+    font-weight: 400;
+    position: relative;
+}
+
+.adder ul li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60%;
+    border-bottom: solid 1px #fff;
 }
