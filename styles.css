@@ -2,6 +2,7 @@
     --plusSignWidth: 3px;
     --plusSignHeight: 40%;
     --plusSignColor: #fff;
+    --iconMobileHeight: 6vw;
 }
 
 *, *::after, *::before {
@@ -687,5 +688,217 @@ li p {
     100% {
         opacity: 1;
         transform: translateY(0vh);
+    }
+}
+
+/* media queries */ 
+
+@media (min-height: 1500px) and (min-width: 1500px) {
+    html {
+        font-size: 100% !important;
+    }
+}
+
+@media (min-width: 1921px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1280px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 650px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait), (width: 1090px) and (height: 1366px) {
+    .liScreen {
+        height: 90%;
+        width: 100%;
+    }
+
+    .liScreenContainer {
+        padding: 4rem;
+    }
+
+    .box-shadow {
+        position: fixed;
+        width: 100%;
+        height: 10%;
+        top: 90%;
+        left: o;
+        box-shadow: 0 -1.5rem 2rem 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        width: 100%;
+        height: 10%;
+        padding: 0 5rem;
+        position: relative;
+        top: 90%;
+    }
+
+    .header ul li p, .svg-bg {
+        display: none;
+    }
+
+    .radioClass {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header ul li > svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header ul {
+        width: auto;
+    }
+
+    .radioClass {
+        width: var(--iconMobileHeight);
+        height: var(--iconMobileHeight);
+    }
+
+    .header .top-list > ul > li, .header .bottom-list > ul > li {
+        float: left;
+        width: 100%;
+        display: block;
+        width: var(--iconMobileHeight);
+        height: var(--iconMobileHeight);
+    }
+
+    .balance {
+        width: 100%;
+    }
+
+    .top-list {
+        position: absolute;
+        width: calc(100% / 6 * 4);
+        height: var(--iconMobileHeight);
+        top: calc((10vh - var(--iconMobileHeight)) / 2);
+        left: 0;
+    }
+
+    .bottom-list {
+        position: absolute;
+        width: calc(100% / 6 * 2);
+        height: var(--iconMobileHeight);
+        top: calc((10vh - var(--iconMobileHeight)) / 2);
+        right: 0;
+    }
+
+    .top-list > ul, .bottom-list > ul {
+        width: 100%;
+        height: var(--iconMobileHeight);
+        clear: both;
+        position: relative;
+    }
+
+    .top-list > ul {
+        width: auto;
+        margin-left: 5rem;
+    }
+
+    .bottom-list > ul {
+        float: right;
+        width: auto;
+        margin-right: 5rem;
+    }
+
+    .top-list > ul > li:not(:last-child), .bottom-list > ul > li:not(:last-child) {
+        background-color: transparent;
+        box-sizing: content-box;
+        padding-right: calc((100vw - 10rem - (var(--iconMobileHeight) * 6)) / 5);
+    }
+
+    .phone {
+        margin-left: 0;
+    }
+
+    .graph1 {
+        left: 10%;
+        width: 35%;
+    }
+
+    .graph2 {
+        right: 10%;
+        width: 35%;
+    }
+
+    .numbers {
+        width: 3rem;
+    }
+
+    .numbers > h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .graph {
+        width: calc(100% - 3rem);
+        padding: 0 5px;
+    }
+
+    .upperText {
+        position: absolute;
+        bottom: 75vh;
+    }
+
+    .categoryFade {
+        height: calc(26vh + 2rem);
+    }
+
+    .categoriesContainer {
+        padding-top: 1vh;
+    }
+
+    .category {
+        height: 24vh;
+    }
+
+    .amount {
+        bottom: 20%;
+    }
+
+    .amountCategory {
+        bottom: calc(20% - 2.5rem);
+    }
+
+    .plusSign, .plusSignInput {
+        position: absolute;
+        top: 5.5vh;
+    }
+
+    .adder {
+        position: absolute;
+        top: calc(5.5vh + 6rem);
+    }
+}
+
+@media (max-height: 500px) and (orientation: portrait) {
+    html {
+        font-size: 34%;
+    }
+
+    .categoriesContainer {
+        padding-top: 2px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    html {
+        font-size: 34%;
+    }
+
+    .categoriesContainer {
+        padding-top: 2px;
     }
 }
