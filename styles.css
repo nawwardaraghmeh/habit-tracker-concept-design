@@ -382,3 +382,139 @@ li p {
     fill: #fff;
 }
 
+/* graph */
+
+.graphContainer {
+    width: calc(100% - 10rem);
+    height: 36vh;
+    position: absolute;
+    bottom: 4rem;
+    left: 5rem;
+}
+
+.numbers > {
+    display: block;
+}
+
+.numbers * {
+    font-weight: 400;
+}
+
+.numbers {
+    color: #aaa;
+    width: 4rem;
+    height: 100%;
+    position: relative;
+}
+
+.per100 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.per50 {
+    position: absolute;
+    top: calc(50% - 1rem);
+    transform: translateY(calc(-50% - 1rem));
+    left: 0;
+}
+
+.per0 {
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+}
+
+.graph {
+    background-color: white;
+    border-radius: 10px;
+    width: calc(100% - 4rem);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 2rem;
+}
+
+.graph > :not(:last-child) {
+    margin-right: 1.2rem;
+}
+
+.graphBar {
+    display: inline-block;
+    width: calc(((100% - 2rem) / 7) - 1rem);
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+}
+
+.date {
+    background-color: lightgray;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 1rem;
+    width: 90%;
+    padding: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.graph1 {
+    width: 20%;
+    height: calc(100% - 7rem);
+    background-color: tomato;
+    position: absolute;
+    border-radius: 5px;
+    left: 25%;
+    top: 1rem;
+}
+
+.graph2 {
+    width: 20%;
+    height: calc(100% - 7rem);
+    background-color: tomato;
+    position: absolute;
+    border-radius: 5px;
+    right: 25%;
+    top: 1rem;
+}
+
+.graph1::after, .graph2::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--myHeight);
+    background-color: firebrick;
+    border-radius: 5px;
+}
+
+
+.graphHeight{
+    background-color: lightgray;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 1rem;
+    width: 90%;
+    padding: 1rem 0;
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    font-weight: 600;
+}
+
+.graph1:hover + .graphHeight,  .graph2:hover + .graphHeight {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+}
